@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  	<parent>
+		<groupId>airshark</groupId>
+		<artifactId>airshark.parent</artifactId>
+		<version>1.0.3</version>
+		<relativePath>../airshark.parent</relativePath>
+	</parent>
+	
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>airshark.autoload</artifactId>
+  <version>${airshark.autoload}</version>
+  <packaging>bundle</packaging>
+  
+  <properties>
+		<target>../airshark.assembly/target</target>
+	</properties>
+   
+   <dependencies>
+		<dependency>
+			<groupId>org.eclipse.tycho</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+		</dependency>
+	</dependencies>
+   
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Private-Package>
+                hu.mucsi.airshark.autoload.*
+            </Private-Package>
+            <Import-Package>
+                org.osgi.service.log;resolution:=optional,
+                org.osgi.service.cm;resolution:=optional,
+                *
+            </Import-Package>
+            <Bundle-Activator>hu.mucsi.airshark.autoload.internal.FileInstall</Bundle-Activator>
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
