@@ -11,7 +11,7 @@
 		<target>../airshark.assembly/target/autoload</target>
 
 		<airshark.samples.console>1.0.2</airshark.samples.console>
-		<airshark.samples.web>1.0.2</airshark.samples.web>
+		<airshark.samples.web>1.0.5</airshark.samples.web>
 		<airshark.samples.web.annotation>1.0.3</airshark.samples.web.annotation>
 		<airshark.assembly>1.0.2</airshark.assembly>
 		<airshark.autoload>1.0.0</airshark.autoload>
