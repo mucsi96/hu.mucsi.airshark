@@ -23,6 +23,7 @@ import java.util.zip.CRC32;
  * the change on this file.  This allows to not report the change until
  * a big copy if complete for example.
  */
+@SuppressWarnings({"unchecked","rawtypes"})
 public class Scanner {
 
     final File directory;

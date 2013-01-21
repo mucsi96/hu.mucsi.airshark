@@ -159,7 +159,8 @@ public class Util
             }
         }
 
-        private LogService getLogService()
+        @SuppressWarnings("unchecked")
+		private LogService getLogService()
         {
             ServiceReference ref = context.getServiceReference(LogService.class.getName());
             if (ref != null)

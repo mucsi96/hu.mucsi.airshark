@@ -11,6 +11,7 @@ import java.io.PrintStream;
  * It first tries to log to a log service implementation if there is one available and then fallback to System out/err
  * in case there is no log service available.
  */
+@SuppressWarnings({"unchecked","rawtypes"})
 public class Logger
 {
     public static final int LOG_ERROR = 1;

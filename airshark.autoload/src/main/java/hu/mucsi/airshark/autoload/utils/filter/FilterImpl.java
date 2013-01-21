@@ -20,6 +20,7 @@ import org.osgi.framework.Version;
  * support for the SUPERSET (&gt;*) and SUBSET (&lt;*) operators.
  * This filter also has a few optimizations (cached transformation).
  */
+@SuppressWarnings({"unchecked","rawtypes"})
 public class FilterImpl implements Filter {
 
     /* filter operators */

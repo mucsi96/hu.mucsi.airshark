@@ -46,6 +46,7 @@ import org.osgi.framework.Version;
 import org.osgi.service.packageadmin.PackageAdmin;
 import org.osgi.service.startlevel.StartLevel;
 
+@SuppressWarnings({"unchecked","rawtypes","deprecation"})
 public class DirectoryWatcher extends Thread implements BundleListener {
 	public final static String FILENAME = "felix.fileinstall.filename";
 	public final static String POLL = "felix.fileinstall.poll";
@@ -321,46 +322,6 @@ public class DirectoryWatcher extends Thread implements BundleListener {
 					artifact = null;
 				}
 
-				// File has been modified
-				if (artifact != null) {
-					artifact.setChecksum(scanner.getChecksum(file));
-					// If there's no listener, this is because this artifact has
-					// been installed before
-					// fileinstall has been restarted. In this case, try to find
-					// a listener.
-					if (artifact.getListener() == null) {
-						ArtifactListener listener = findListener(jar, listeners);
-						// If no listener can handle this artifact, we need to
-						// defer the
-						// processing for this artifact until one is found
-						if (listener == null) {
-							synchronized (processingFailures) {
-								processingFailures.add(file);
-							}
-							continue;
-						}
-						artifact.setListener(listener);
-					}
-					// If the listener can not handle this file anymore,
-					// uninstall the artifact and try as if is was new
-					if (!listeners.contains(artifact.getListener()) || !artifact.getListener().canHandle(jar)) {
-						deleted.add(artifact);
-						artifact = null;
-					}
-					// The listener is still ok
-					else {
-						deleteTransformedFile(artifact);
-						artifact.setJaredDirectory(jar);
-						artifact.setJaredUrl(jaredUrl);
-						if (transformArtifact(artifact)) {
-							modified.add(artifact);
-						} else {
-							deleteJaredDirectory(artifact);
-							deleted.add(artifact);
-						}
-						continue;
-					}
-				}
 				// File has been added
 				else {
 

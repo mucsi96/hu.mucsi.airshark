@@ -3,6 +3,7 @@ package hu.mucsi.airshark.autoload.utils.manifest;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings({"unchecked","rawtypes"})
 public final class Parser
 {
     private Parser() { }

@@ -4,7 +4,6 @@ import hu.mucsi.airshark.autoload.ArtifactInstaller;
 import hu.mucsi.airshark.autoload.ArtifactListener;
 import hu.mucsi.airshark.autoload.ArtifactTransformer;
 import hu.mucsi.airshark.autoload.ArtifactUrlTransformer;
-import hu.mucsi.airshark.autoload.internal.Util.Logger;
 import hu.mucsi.airshark.autoload.utils.collections.DictionaryAsMap;
 import hu.mucsi.airshark.autoload.utils.properties.InterpolationHelper;
 
@@ -33,6 +32,7 @@ import org.osgi.service.startlevel.StartLevel;
 import org.osgi.util.tracker.ServiceTracker;
 import org.osgi.util.tracker.ServiceTrackerCustomizer;
 
+@SuppressWarnings({"unchecked","rawtypes","deprecation"})
 public class FileInstall implements BundleActivator, ServiceTrackerCustomizer, FrameworkListener
 {
     static ServiceTracker padmin;

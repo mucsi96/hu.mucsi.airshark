@@ -12,6 +12,7 @@ import org.osgi.framework.Version;
  * @author dave
  *
  */
+@SuppressWarnings({"unchecked","rawtypes"})
 public final class VersionTable
 {
     private static final WeakHashMap versions = new WeakHashMap();
