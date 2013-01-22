@@ -15,6 +15,9 @@
 		<airshark.samples.web.annotation>1.0.3</airshark.samples.web.annotation>
 		<airshark.assembly>1.0.2</airshark.assembly>
 		<airshark.autoload>1.0.0</airshark.autoload>
+		<airshark.samples.blueprint.interface>1.0.0</airshark.samples.blueprint.interface>
+		<airshark.samples.blueprint.server>1.0.0</airshark.samples.blueprint.server>
+		<airshark.samples.blueprint.client>1.0.0</airshark.samples.blueprint.client>
 
 
 		<org.eclipse.osgi>3.7.0.v20110613</org.eclipse.osgi>
@@ -31,6 +34,10 @@
 		<org.apache.aries.jndi>1.0.0</org.apache.aries.jndi>
 		<org.apache.aries.util>1.0.0</org.apache.aries.util>
 		<org.apache.aries.blueprint>1.0.0</org.apache.aries.blueprint>
+		<org.apache.aries.blueprint.annotation.api>1.0.0</org.apache.aries.blueprint.annotation.api>
+		<org.apache.aries.blueprint.annotation.impl>1.0.0</org.apache.aries.blueprint.annotation.impl>
+		<xbean-bundleutils>3.12</xbean-bundleutils>
+		<xbean-finder>3.12</xbean-finder>
 		<org.apache.aries.proxy>1.0.0</org.apache.aries.proxy>
 		<org.apache.aries.application.install>1.0.0</org.apache.aries.application.install>
 		<org.apache.aries.application.management>1.0.0</org.apache.aries.application.management>
@@ -229,6 +236,30 @@
 				<groupId>org.apache.aries.blueprint</groupId>
 				<artifactId>org.apache.aries.blueprint</artifactId>
 				<version>${org.apache.aries.blueprint}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.aries.blueprint</groupId>
+				<artifactId>org.apache.aries.blueprint.annotation.api</artifactId>
+				<version>${org.apache.aries.blueprint.annotation.api}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.aries.blueprint</groupId>
+				<artifactId>org.apache.aries.blueprint.annotation.impl</artifactId>
+				<version>${org.apache.aries.blueprint.annotation.impl}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.xbean</groupId>
+				<artifactId>xbean-bundleutils</artifactId>
+				<version>${xbean-bundleutils}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.xbean</groupId>
+				<artifactId>xbean-finder</artifactId>
+				<version>${xbean-finder}</version>
 			</dependency>
 
 			<dependency>
@@ -454,5 +485,8 @@
 		<module>../airshark.samples.console</module>
 		<module>../airshark.samples.web</module>
 		<module>../airshark.samples.web.annotation</module>
+		<module>../airshark.samples.blueprint.interface</module>
+		<module>../airshark.samples.blueprint.server</module>
+		<module>../airshark.samples.blueprint.client</module>
 	</modules>
 </project>
