@@ -323,7 +323,7 @@ public class DirectoryWatcher extends Thread implements BundleListener {
 				}
 
 				// File has been added
-				else {
+				if (artifact == null) {
 
 					boolean load = true;
 					// Find the listener
@@ -360,7 +360,7 @@ public class DirectoryWatcher extends Thread implements BundleListener {
 								if (b.getSymbolicName() != null && b.getSymbolicName().equals(artifact.getSymbolicName())) {
 									log(Logger.LOG_WARNING, "Multiple versions found of bundle: " + artifact.getSymbolicName() + ". Using the newest version",
 											null);
-									if (artifact.getVersion() != null && artifact.getVersion().compareTo(b.getVersion()) > 0) {
+									if (artifact.getVersion() != null && artifact.getVersion().compareTo(b.getVersion()) >= 0) {
 										log(Logger.LOG_INFO, "Newer version found of bundle: " + b + ". Deleting the old version.", null);
 										Artifact old = null;
 										try {
