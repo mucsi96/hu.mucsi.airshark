@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+		<groupId>hu.mucsi.airshark</groupId>
+		<artifactId>airshark.parent</artifactId>
+		<version>1.0.3</version>
+		<relativePath>../airshark.parent</relativePath>
+	</parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>airshark.samples.blueprint.multiple.client</artifactId>
+  <version>${airshark.samples.blueprint.multiple.client}</version>
+  <packaging>bundle</packaging>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>hu.mucsi.airshark</groupId>
+  		<artifactId>airshark.samples.blueprint.multiple.interface</artifactId>
+  		<version>${airshark.samples.blueprint.multiple.interface}</version>
+  		<type>bundle</type>
+  	</dependency>
+  	<dependency>
+			<groupId>org.apache.aries.blueprint</groupId>
+			<artifactId>org.apache.aries.blueprint.annotation.impl</artifactId>
+		</dependency>
+  </dependencies>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Private-Package>hu.mucsi.airshark.samples.blueprint.multiple.client</Private-Package>
+						<Bundle-Blueprint-Annotation>true</Bundle-Blueprint-Annotation>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

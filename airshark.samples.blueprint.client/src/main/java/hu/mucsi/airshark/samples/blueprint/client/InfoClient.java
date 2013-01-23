@@ -25,6 +25,7 @@ public class InfoClient {
 		System.out.println("Hello from client init. The info is: " + infoService);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Bind
 	public void bind(Info info, Map props) {
 		this.infoService = info;
@@ -33,6 +34,7 @@ public class InfoClient {
 		System.out.println(this.infoService.getTime());
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Unbind
 	public void unbind(Info info, Map props) {
 		this.infoService = info;
