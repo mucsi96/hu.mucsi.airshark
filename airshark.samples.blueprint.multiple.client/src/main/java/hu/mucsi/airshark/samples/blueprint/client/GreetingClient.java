@@ -2,6 +2,7 @@ package hu.mucsi.airshark.samples.blueprint.client;
 
 
 import hu.mucsi.airshark.samples.blueprint.multiple.interfacce.Greeting;
+import hu.mucsi.airshark.samples.blueprint.multiple.interfacce.Greetings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +14,13 @@ import org.apache.aries.blueprint.annotation.Init;
 import org.apache.aries.blueprint.annotation.Inject;
 import org.apache.aries.blueprint.annotation.ReferenceList;
 import org.apache.aries.blueprint.annotation.ReferenceListener;
+import org.apache.aries.blueprint.annotation.Service;
 import org.apache.aries.blueprint.annotation.Unbind;
 
 @Bean(id = "bindingListener")
 @ReferenceListener
-public class GreetingClient {
+@Service(autoExport = "all-classes")
+public class GreetingClient implements Greetings{
 
 	@SuppressWarnings("unused")
 	@Inject
@@ -49,6 +52,11 @@ public class GreetingClient {
 		for(Greeting g:greetings) {
 			System.out.println(g.getGreeting());
 		}
+	}
+
+	@Override
+	public List<Greeting> getGreetings() {
+		return greetings;
 	}
 
 }

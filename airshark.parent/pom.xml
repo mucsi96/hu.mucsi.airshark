@@ -23,6 +23,7 @@
 		<airshark.samples.blueprint.multiple.server.alex>1.0.0</airshark.samples.blueprint.multiple.server.alex>
 		<airshark.samples.blueprint.multiple.server.kate>1.0.0</airshark.samples.blueprint.multiple.server.kate>
 		<airshark.samples.blueprint.multiple.client>1.0.0</airshark.samples.blueprint.multiple.client>
+		<airshark.samples.blueprint.web>1.0.0</airshark.samples.blueprint.web>
 
 
 		<org.eclipse.osgi>3.7.0.v20110613</org.eclipse.osgi>
@@ -495,8 +496,9 @@
 		<module>../airshark.samples.blueprint.client</module>
 		<module>../airshark.samples.blueprint.multiple.interface</module>
 		<module>../airshark.samples.blueprint.multiple.server.tom</module>
-		<!--   <module>../airshark.samples.blueprint.multiple.server.alex</module>
-		<module>../airshark.samples.blueprint.multiple.server.kate</module>-->
+		<module>../airshark.samples.blueprint.multiple.server.alex</module>
+		<module>../airshark.samples.blueprint.multiple.server.kate</module>
 		<module>../airshark.samples.blueprint.multiple.client</module>
+		<module>../airshark.samples.blueprint.web</module>
 	</modules>
 </project>
